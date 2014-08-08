@@ -17,7 +17,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return View::make(Config::get('confide::signup_form'));
+        //return View::make(Config::get('confide::signup_form'));
+        return View::make('registro');
     }
 
     /**
@@ -31,8 +32,7 @@ class UsersController extends Controller
         $user = $repo->signup(Input::all());
 
         if ($user->id) {
-            Mail::queueOn(
-                Config::get('confide::email_queue'),
+            Mail::send(
                 Config::get('confide::email_account_confirmation'),
                 compact('user'),
                 function ($message) use ($user) {
@@ -61,9 +61,40 @@ class UsersController extends Controller
     public function login()
     {
         if (Confide::user()) {
-            return Redirect::to('/');
+            return Redirect::to('dashboard');
         } else {
-            return View::make(Config::get('confide::login_form'));
+            //return View::make(Config::get('confide::login_form'));
+            return View::make('login');
+        }
+    }
+
+    /**
+     * Displays dashboard
+     *
+     * @return  Illuminate\Http\Response
+     */
+    public function dashboard()
+    {
+        if (Confide::user()) {
+			return View::make('dashboard');
+            
+        } else {
+            return Redirect::to('login');
+        }
+    }
+
+    /**
+     * Displays the user's profile
+     *
+     * @return  Illuminate\Http\Response
+     */
+    public function profile()
+    {
+        if (Confide::user()) {
+			return View::make('profile');
+            
+        } else {
+            return Redirect::to('login');
         }
     }
 
@@ -121,7 +152,8 @@ class UsersController extends Controller
      */
     public function forgotPassword()
     {
-        return View::make(Config::get('confide::forgot_password_form'));
+        //return View::make(Config::get('confide::forgot_password_form'));
+        return View::make('forgotpassword');
     }
 
     /**
@@ -137,7 +169,7 @@ class UsersController extends Controller
                 ->with('notice', $notice_msg);
         } else {
             $error_msg = Lang::get('confide::confide.alerts.wrong_password_forgot');
-            return Redirect::action('UsersController@doForgotPassword')
+            return Redirect::action('UsersController@forgotPassword')
                 ->withInput()
                 ->with('error', $error_msg);
         }
