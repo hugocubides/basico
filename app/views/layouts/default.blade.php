@@ -23,7 +23,7 @@
     <div class="container">
         @yield('main')
         {{ Lang::get('basico.locale') }}: {{ Config::get( 'app.locale' ) }}
-      @include('partials.footer')
+		@include('partials.footer')
     </div> <!-- /container -->	
 	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
