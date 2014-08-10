@@ -40,13 +40,5 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('dashboard', 'UsersController@showDashboard');
 	
 	//muestra el perfil del usuario usando en el segmento el nombre de usuario
-	Route::get('{username}', function($username)
-	{
-		if ($username == Auth::user()->username) {
-			return Redirect::action('UsersController@showProfile');
-		}else{
-			return Redirect::to('/');
-		}
-	});
 	Route::get('{username}', 'UsersController@showProfile');
 });

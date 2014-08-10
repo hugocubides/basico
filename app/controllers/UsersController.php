@@ -87,10 +87,14 @@ class UsersController extends Controller
      *
      * @return  Illuminate\Http\Response
      */
-    public function showProfile()
+    public function showProfile($username)
     {
         if (Confide::user()) {
-			return View::make('profile');
+			if ($username == Auth::user()->username) {
+				return View::make('profile');
+			}else{
+				return View::make('404');
+			}			
         } else {
             return Redirect::to('login');
         }
