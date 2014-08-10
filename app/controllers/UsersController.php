@@ -72,7 +72,7 @@ class UsersController extends Controller
      *
      * @return  Illuminate\Http\Response
      */
-    public function dashboard()
+    public function showDashboard()
     {
         if (Confide::user()) {
 			return View::make('dashboard');
@@ -87,11 +87,10 @@ class UsersController extends Controller
      *
      * @return  Illuminate\Http\Response
      */
-    public function profile()
+    public function showProfile()
     {
         if (Confide::user()) {
 			return View::make('profile');
-            
         } else {
             return Redirect::to('login');
         }

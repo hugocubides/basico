@@ -22,14 +22,6 @@ Route::get('/', function()
 	
 });
 
-//Valida primero que exista una sesion abierta en auth para ingresar a cualquiera de las rutas
-Route::group(array('before' => 'auth'), function()
-{   
-	Route::get('dashboard', 'UsersController@dashboard');
-	Route::get('profile', 'UsersController@profile');
-  
-});
-
 // Confide routes
 Route::get('users/create', 'UsersController@create');
 Route::post('users', 'UsersController@store');
@@ -41,3 +33,20 @@ Route::post('users/forgot_password', 'UsersController@doForgotPassword');
 Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('logout', 'UsersController@logout');
+
+//Valida primero que exista una sesion abierta en auth para ingresar a cualquiera de las rutas
+Route::group(array('before' => 'auth'), function()
+{   
+	Route::get('dashboard', 'UsersController@showDashboard');
+	
+	//muestra el perfil del usuario usando en el segmento el nombre de usuario
+	Route::get('{username}', function($username)
+	{
+		if ($username == Auth::user()->username) {
+			return Redirect::action('UsersController@showProfile');
+		}else{
+			return Redirect::to('/');
+		}
+	});
+	Route::get('{username}', 'UsersController@showProfile');
+});
