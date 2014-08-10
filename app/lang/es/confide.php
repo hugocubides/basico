@@ -20,7 +20,7 @@ return array(
         'desc'            => 'Introduzca sus credenciales',
         'forgot_password' => '(olvidé contraseña)',
         'remember'        => 'Recuerdame',
-        'submit'          => 'Ingresar',
+        'submit'          => 'Login',
     ),
 
     'forgot' => array(
