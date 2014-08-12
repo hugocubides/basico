@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function()
-{
+{	
 	//Si hay un usuario logueado ingresa al tablero, sino va a la pantalla de bienvenida
 	if (Confide::user()) {
 		return Redirect::to('dashboard');
@@ -37,8 +37,8 @@ Route::get('logout', 'UsersController@logout');
 //Valida primero que exista una sesion abierta en auth para ingresar a cualquiera de las rutas
 Route::group(array('before' => 'auth'), function()
 {   
-	Route::get('dashboard', 'UsersController@showDashboard');
+	Route::get('dashboard', 'DashboardController@showDashboard');
 	
 	//muestra el perfil del usuario usando en el segmento el nombre de usuario
-	Route::get('{username}', 'UsersController@showProfile');
+	Route::get('{username}', 'ProfileController@showProfile');
 });

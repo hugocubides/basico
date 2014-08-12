@@ -20,6 +20,7 @@ class UserRepository
     public function signup($input)
     {
         $user = new User;
+        
 
         $user->username = array_get($input, 'username');
         $user->email    = array_get($input, 'email');
@@ -35,7 +36,7 @@ class UserRepository
 
         // Save if valid. Password field will be hashed before save
         $this->save($user);
-
+		
         return $user;
     }
 
@@ -124,7 +125,7 @@ class UserRepository
      * @return  boolean Success
      */
     public function save(User $instance)
-    {
+    {	
         return $instance->save();
     }
 }

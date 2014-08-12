@@ -19,7 +19,14 @@
           <ul class="nav navbar-nav navbar-right">
 			@if (Confide::user())
 				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->username }} <span class="caret"></span></a>
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<?php $display_name = Profile::where('user_id', '=', Auth::user()->id)->pluck('display_name'); ?>
+					@if ($display_name <> '')
+						{{ $display_name }}
+					@else 
+						{{ Auth::user()->username }} 
+					@endif
+					  <span class="caret"></span></a>
 				  <ul class="dropdown-menu" role="menu">
 					<li><a href="{{ URL::to(Auth::user()->username) }}">{{ Lang::get('basico.profile') }}</a></li>
 					<li class="divider"></li>

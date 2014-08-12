@@ -17,7 +17,6 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //return View::make(Config::get('confide::signup_form'));
         return View::make('signup');
     }
 
@@ -28,10 +27,15 @@ class UsersController extends Controller
      */
     public function store()
     {
-        $repo = App::make('UserRepository');
+        $repo = App::make('UserRepository');        
         $user = $repo->signup(Input::all());
-
+		$profile = new Profile;
+		
         if ($user->id) {
+			//crea el perfil del usuario
+			$profile->user_id = $user->id;
+			$profile->save();
+			
             Mail::send(
                 Config::get('email_account_confirmation'),
                 compact('user'),
@@ -64,39 +68,6 @@ class UsersController extends Controller
             return Redirect::to('dashboard');
         } else {
             return View::make('login');
-        }
-    }
-
-    /**
-     * Displays dashboard
-     *
-     * @return  Illuminate\Http\Response
-     */
-    public function showDashboard()
-    {
-        if (Confide::user()) {
-			return View::make('dashboard');
-            
-        } else {
-            return Redirect::to('login');
-        }
-    }
-
-    /**
-     * Displays the user's profile
-     *
-     * @return  Illuminate\Http\Response
-     */
-    public function showProfile($username)
-    {
-        if (Confide::user()) {
-			if ($username == Auth::user()->username) {
-				return View::make('profile');
-			}else{
-				return View::make('404');
-			}			
-        } else {
-            return Redirect::to('login');
         }
     }
 
