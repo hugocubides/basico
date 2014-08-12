@@ -11,7 +11,7 @@ class ProfileController extends BaseController {
     {
 		if ($username == Auth::user()->username) {
 			$profile = Profile::where('user_id', '=', Auth::user()->id)->get();
-			return View::make('profile')->with('profile', $profile);
+			return View::make('users.profile')->with('profile', $profile);
 		}else{
 			return View::make('404');
 		}			
