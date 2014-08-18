@@ -41,4 +41,6 @@ Route::group(array('before' => 'auth'), function()
 	
 	//muestra el perfil del usuario usando en el segmento el nombre de usuario
 	Route::get('{username}', 'ProfileController@showProfile');
+	Route::get('{username}/edit', 'ProfileController@editProfile');
+	Route::post('{username}/edit', 'ProfileController@updateProfile');
 });

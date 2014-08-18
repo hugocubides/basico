@@ -13,7 +13,14 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="{{ URL::to('/') }}">{{ Lang::get('basico.home') }}</a></li>
+            <li class="active">
+				<a href="{{ URL::to('/') }}">
+					@if (Confide::user())
+						@lang('basico.dashboard')
+					@else
+						@lang('basico.home')
+					@endif
+				</a></li>
           </ul>
           
           <ul class="nav navbar-nav navbar-right">

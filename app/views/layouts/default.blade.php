@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
 	<link href="{{ URL::asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ URL::asset('assets/css/jquery-ui.min.css') }}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +28,14 @@
     </div> <!-- /container -->	
 	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--<script src="{{ URL::asset('assets/js/jquery-ui.min.js') }}"></script>-->
+    <script src="{{ URL::asset('assets/js/jquery.ui.datepicker-es.js') }}"></script>
     <script src="{{ URL::asset('assets/js/bootstrap.min.js') }}"></script>
     
+    <script>
+	$(function() {
+		$( "#birthday" ).datepicker({ dateFormat: "yy-mm-dd" });		
+	});
+	</script>
   </body>
 </html>
