@@ -10,10 +10,12 @@ crear una cuenta, loguearse, cerrar la sesión, confirmar a través de email, re
 * Laravel Debugbar 1.*
 * Confide 4.0.* beta
 * Bootstrap 3.2.0
+* jquery.ui.datepicker 1.11.1
 
 ### Características
 Todas las incluidas en [Confide](https://github.com/Zizaco/confide#features)
 * Layout básico en bootstrap usando blade
+* Perfil básico del usuario
 * Implementación básica del idioma español latino
 * Listo para usar.
 
