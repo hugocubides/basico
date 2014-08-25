@@ -7,17 +7,23 @@ crear una cuenta, loguearse, cerrar la sesión, confirmar a través de email, re
 
 ### Paquetes incluidos
 * Laravel 4.2.*
-* Laravel Debugbar 1.*
-* Confide 4.0.* beta
-* Bootstrap 3.2.0
-* jquery.ui.datepicker 1.11.1
+* [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar) 1.*
+* [Confide](https://github.com/Zizaco/confide) 4.0.* beta
+* [Bootstrap](http://getbootstrap.com/) 3.2.0
+* [jquery.ui.datepicker](http://api.jqueryui.com/datepicker/) 1.11.1
 
 ### Características
-Todas las incluidas en [Confide](https://github.com/Zizaco/confide#features)
 * Layout básico en bootstrap usando blade
-* Perfil básico del usuario
+* Login de usuario, formulario de registro y formulario de olvido la contraseña
+* Tablero en blanco para tu proyecto
+* Perfil básico del usuario con validación del formulario
 * Implementación básica del idioma español latino
-* Listo para usar.
+
+### Próximas características
+* Localización básica para inglés y español latino
+* Roles y permmisos de usuario
+* Creación de formularios con el paquete former
+* Lista de países de acuerdo al ISO 3166_2, 3166_3
 
 ### Instalación
 La instalación viene lista para usar un entorno de desarrollo con herramientas de depuración.
