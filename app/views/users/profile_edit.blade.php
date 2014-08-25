@@ -21,7 +21,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="first_name">@lang('basico.first_name')</label>
-					<input class="form-control" tabindex="1" type="text" name="first_name" id="first_name" value="{{ $item->first_name }}">
+					<input class="form-control" tabindex="1" type="text" name="first_name" id="first_name" value="{{{ $errors->all() ? Input::old('first_name') : $item->first_name }}}">
 					@foreach($errors->get('first_name') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -32,7 +32,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="last_name">@lang('basico.last_name')</label>
-					<input class="form-control" tabindex="2" type="text" name="last_name" id="last_name" value="{{ $item->last_name }}">
+					<input class="form-control" tabindex="2" type="text" name="last_name" id="last_name" value="{{{ $errors->all() ? Input::old('last_name') : $item->last_name }}}">
 					@foreach($errors->get('last_name') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -45,7 +45,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="display_name">@lang('basico.display_name')</label>
-					<input class="form-control" tabindex="3" type="text" name="display_name" id="display_name" value="{{ $item->display_name }}">
+					<input class="form-control" tabindex="3" type="text" name="display_name" id="display_name" value="{{{ $errors->all() ? Input::old('display_name') : $item->display_name }}}">
 					@foreach($errors->get('display_name') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -56,7 +56,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="birthday">@lang('basico.birthday')</label>
-					<input class="form-control" tabindex="4" type="text" name="birthday" id="birthday" value="{{ $item->birthday }}">
+					<input class="form-control" tabindex="4" type="text" name="birthday" id="birthday" value="{{{ $errors->all() ? Input::old('birthday') : $item->birthday }}}">
 					@foreach($errors->get('birthday') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -69,7 +69,7 @@
 				<div class="form-group col-sm-12">
 				@endif
 					<label for="bio">@lang('basico.bio')</label>
-					<textarea class="form-control" tabindex="5" name="bio" id="bio" rows="3">{{{ $item->bio }}}</textarea>
+					<textarea class="form-control" tabindex="5" name="bio" id="bio" rows="3">{{{ $errors->all() ? Input::old('bio') : $item->bio }}}</textarea>
 					<span class="help-block">Acerca de ti en 160 caracteres o menos.</span>
 					@foreach($errors->get('bio') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
@@ -83,7 +83,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="profession">@lang('basico.profession')</label>
-					<input class="form-control" tabindex="6" type="text" name="profession" id="profession" value="{{ $item->profession }}">
+					<input class="form-control" tabindex="6" type="text" name="profession" id="profession" value="{{{ $errors->all() ? Input::old('profession') : $item->profession }}}">
 					@foreach($errors->get('profession') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -94,7 +94,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="organization">@lang('basico.organization')</label>
-					<input class="form-control" tabindex="7" type="text" name="organization" id="organization" value="{{ $item->organization }}">
+					<input class="form-control" tabindex="7" type="text" name="organization" id="organization" value="{{{ $errors->all() ? Input::old('organization') : $item->organization }}}">
 					@foreach($errors->get('organization') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -107,7 +107,7 @@
 				<div class="form-group col-sm-12">
 				@endif
 					<label for="address">@lang('basico.address')</label>
-					<input class="form-control" tabindex="8" type="text" name="address" id="address" value="{{ $item->address }}">
+					<input class="form-control" tabindex="8" type="text" name="address" id="address" value="{{{ $errors->all() ? Input::old('address') : $item->address }}}">
 					@foreach($errors->get('address') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -120,7 +120,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="city">@lang('basico.city')</label>
-					<input class="form-control" tabindex="9" type="text" name="city" id="city" value="{{ $item->city }}">
+					<input class="form-control" tabindex="9" type="text" name="city" id="city" value="{{{ $errors->all() ? Input::old('city') : $item->city }}}">
 					@foreach($errors->get('city') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -131,7 +131,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="country">@lang('basico.country')</label>
-					<input class="form-control" tabindex="10" type="text" name="country" id="country" value="{{ $item->country }}">
+					<input class="form-control" tabindex="10" type="text" name="country" id="country" value="{{{ $errors->all() ? Input::old('country') : $item->country }}}">
 					@foreach($errors->get('country') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -144,7 +144,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="phone">@lang('basico.phone')</label>
-					<input class="form-control" tabindex="9" type="text" name="phone" id="phone" value="{{ $item->phone }}">
+					<input class="form-control" tabindex="9" type="text" name="phone" id="phone" value="{{{ $errors->all() ? Input::old('phone') : $item->phone }}}">
 					@foreach($errors->get('phone') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -155,7 +155,7 @@
 				<div class="form-group col-sm-6">
 				@endif
 					<label for="mobile">@lang('basico.mobile')</label>
-					<input class="form-control" tabindex="9" type="text" name="mobile" id="mobile" value="{{ $item->mobile }}">
+					<input class="form-control" tabindex="9" type="text" name="mobile" id="mobile" value="{{{ $errors->all() ? Input::old('mobile') : $item->mobile }}}">
 					@foreach($errors->get('mobile') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach
@@ -168,7 +168,7 @@
 				<div class="form-group col-sm-12">
 				@endif
 					<label for="website">@lang('basico.website')</label>
-					<input class="form-control" tabindex="9" type="text" name="website" id="website" value="{{ $item->website }}">
+					<input class="form-control" tabindex="9" type="text" name="website" id="website" value="{{{ $errors->all() ? Input::old('website') : $item->website }}}">
 					@foreach($errors->get('website') as $message)
 						<div class="alert alert-danger" role="alert">{{ $message }}</div>
 					@endforeach

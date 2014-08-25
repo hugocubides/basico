@@ -84,7 +84,7 @@ class ProfileController extends BaseController {
 		$validador = Validator::make($data, $reglas, $mensajes);
 		
 		if ($validador->fails()) {
-			return Redirect::to('/'.$username.'/edit')->withErrors($validador);
+			return Redirect::to('/'.$username.'/edit')->withErrors($validador)->withInput();
 		}
 		
 		// Busca los datos del perfil usuario por su id
