@@ -9,6 +9,7 @@ class DashboardController extends BaseController {
      */
     public function showDashboard()
     {
+		//App::setLocale("en");
         return View::make('dashboard');
     }
 

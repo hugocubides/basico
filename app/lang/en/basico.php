@@ -15,7 +15,7 @@ return array(
     'username'		=> 'Username',
     
     //Dashboard
-    'dashboard'		=> 'Tablero',
+    'dashboard'		=> 'Dashboard',
     'welcome_dashboard' 	=> 'You are in dashboard',
     'locale'		=> 'Locale',
     

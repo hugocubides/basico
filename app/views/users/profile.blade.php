@@ -22,7 +22,7 @@
 			<p>@lang('basico.country'): {{ $item->country }}</p>
 			<p>@lang('basico.phone'): {{ $item->phone }}</p>
 			<p>@lang('basico.mobile'): {{ $item->mobile }}</p>
-			<p>@lang('basico.website'): {{ $item->website }}</p>
+			<p>@lang('basico.website'): <a href="{{ $item->website }}" title="{{ $item->website }}" target="_blank">{{ $item->website }}</a></p>
 		@endforeach
 	  </div>
 	  <div class="col-md-4">
