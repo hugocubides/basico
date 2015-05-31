@@ -30,12 +30,31 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-		return User::create([
-			'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
+        
+        $result = User::create([
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
 		]);
+        
+        $this->add_profile($result, $data);
+        
+        return $result;
 	}
+    
+    /**
+     * Crea el perfil para el usuario que se acaba de registrar
+     * @param object $user
+     * @param array $data
+     */
+    private function add_profile( $user, $data )
+    {
+        $profile = new \App\Profile;
+        
+        $profile->first_name = $data['first_name'];
+        $profile->last_name = $data['last_name'];
+        $profile->display_name = $data['first_name'] .' '.$data['last_name'];
+        $profile->user_id = $user->id;
+        $profile->save();
+    }
 
 }

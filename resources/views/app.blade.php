@@ -33,8 +33,9 @@
                     <a href="{{ url('/auth/register') }}" class="btn btn-default navbar-btn">Register</a>
 					@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->profile->display_name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/user/profile') }}">Profile</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>

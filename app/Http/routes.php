@@ -15,6 +15,8 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('dashboard', 'DashboardController@index');
 
+Route::get('user/profile', 'ProfileController@index');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
