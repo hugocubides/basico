@@ -11,6 +11,8 @@
 |
 */
 
+\App::setLocale('es');
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('dashboard', 'DashboardController@index');

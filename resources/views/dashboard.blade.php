@@ -5,8 +5,8 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="jumbotron">
-                <h1>Dashboard</h1>
-				<p>You are logged in!</p>
+                <h1>@lang('basico.dashboard')</h1>
+				<p>@lang('basico.welcome_dashboard')</p>
 			</div>
 		</div>
 	</div>

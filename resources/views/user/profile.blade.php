@@ -5,8 +5,8 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="jumbotron">
-                <h1>Profile</h1>
-				<p>Profile</p>               
+                <h1>@lang('basico.profile')</h1>
+				<p>@lang('basico.profile')</p>               
                 <p>@lang('basico.first_name'): {{ $profile->first_name }}</p>
                 <p>@lang('basico.last_name'): {{ $profile->last_name }}</p>
                 <p>@lang('basico.display_name'): {{ $profile->display_name }}</p>
