@@ -40,7 +40,7 @@
           </div>
           <div class="form-group col-sm-12">
           {!! Form::label('bio', Lang::get('basico.bio')) !!}
-          {!! Form::textarea('bio', $errors->all() ? Input::old('bio') : $profile->bio, ['class' => 'form-control' ]) !!}
+          <textarea class="form-control" name="bio" id="bio" rows="3">{{{ $errors->all() ? Input::old('bio') : $profile->bio }}}</textarea>
             <span class="help-block">Acerca de ti en 160 caracteres o menos.</span>
           </div>
            <div class="form-group col-sm-6">
@@ -71,9 +71,21 @@
           {!! Form::label('mobile', Lang::get('basico.mobile')) !!}
           {!! Form::text('mobile', $errors->all() ? Input::old('mobile') : $profile->mobile, ['class' => 'form-control']) !!}
           </div>
-          <div class="form-group col-sm-12">
+          <div class="form-group col-sm-6">
           {!! Form::label('website', Lang::get('basico.website')) !!}
           {!! Form::text('website', $errors->all() ? Input::old('website') : $profile->website, ['class' => 'form-control']) !!}
+          </div>
+          <div class="form-group col-sm-6">
+          {!! Form::label('website', Lang::get('basico.facebook')) !!}
+          {!! Form::text('facebook', $errors->all() ? Input::old('facebook') : $profile->facebook, ['class' => 'form-control']) !!}
+          </div>
+          <div class="form-group col-sm-6">
+          {!! Form::label('website', Lang::get('basico.twitter')) !!}
+          {!! Form::text('twitter', $errors->all() ? Input::old('twitter') : $profile->twitter, ['class' => 'form-control']) !!}
+          </div>
+          <div class="form-group col-sm-6">
+          {!! Form::label('linkedin', Lang::get('basico.linkedin')) !!}
+          {!! Form::text('linkedin', $errors->all() ? Input::old('linkedin') : $profile->linkedin, ['class' => 'form-control']) !!}
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">@Lang('basico.save')</button>

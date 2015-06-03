@@ -42,6 +42,9 @@ return array(
     'phone'			=> 'Phone',
     'mobile'		=> 'Mobile Phone',
     'website'		=> 'Website',
+    'facebook'      => 'Facebook',
+    'twitter'       => 'Twitter',
+    'linkedin'      => 'Linkedin',
     
     
     //CRUD

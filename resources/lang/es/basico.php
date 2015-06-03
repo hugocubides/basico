@@ -39,6 +39,9 @@ return array(
     'phone'			=> 'Tel&eacute;fono',
     'mobile'		=> 'Celular',
     'website'		=> 'Web',
+    'facebook'      => 'Facebook',
+    'twitter'       => 'Twitter',
+    'linkedin'      => 'Linkedin',
     
     //CRUD
     'save'			=> 'Guardar',
