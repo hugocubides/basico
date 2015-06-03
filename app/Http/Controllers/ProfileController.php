@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use App\Http\Requests\StoreProfileRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Profile as Profile;
@@ -32,13 +32,12 @@ class ProfileController extends Controller {
 	}
 
 	/**
-	 * Store a newly created resource in storage.
+	 * Store a user profile in storage.
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(StoreProfileRequest $request)
 	{
-        //$profile = new Profile;
         $id = Auth::user()->id;
         $profile = Profile::find($id);
         $input = $request->all();

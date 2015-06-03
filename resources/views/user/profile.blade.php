@@ -22,6 +22,9 @@
                 <p>@lang('basico.phone'): {{ $profile->phone }}</p>
                 <p>@lang('basico.mobile'): {{ $profile->mobile }}</p>
                 <p>@lang('basico.website'): <a href="{{ $profile->website }}" title="{{ $profile->website }}" target="_blank">{{ $profile->website }}</a></p>
+                <p>@lang('basico.facebook'): <a href="{{ $profile->facebook }}" title="{{ $profile->facebook }}" target="_blank">{{ $profile->facebook }}</a></p>
+                <p>@lang('basico.twitter'): <a href="{{ $profile->twitter }}" title="{{ $profile->twitter }}" target="_blank">{{ $profile->twitter }}</a></p>
+                <p>@lang('basico.linkedin'): <a href="{{ $profile->linkedin }}" title="{{ $profile->linkedin }}" target="_blank">{{ $profile->linkedin }}</a></p>
               </div>
             </div>
             
