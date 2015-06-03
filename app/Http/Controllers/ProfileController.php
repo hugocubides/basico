@@ -1,11 +1,11 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Profile;
+use App\Profile as Profile;
 use Auth;
 
-use Illuminate\Http\Request;
 
 class ProfileController extends Controller {
     
@@ -27,7 +27,8 @@ class ProfileController extends Controller {
 	 */
 	public function index()
 	{
-        return $this->show();
+        $profile = Auth::user()->profile;        
+        return view('user.profile', compact('profile'));
 	}
 
 	/**
@@ -35,42 +36,26 @@ class ProfileController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
-	}
-
-	/**
-	 * Devuelve los datos para el perfil del usuario
-	 * 
-	 * @return Response
-	 */
-	public function show()
-	{
-        $profile = Auth::user()->profile;        
-        return view('user.profile', compact('profile'));
+        //$profile = new Profile;
+        $id = Auth::user()->id;
+        $profile = Profile::find($id);
+        $input = $request->all();
+        $profile->update($input );
+        $profile->save();
+		return redirect('user/profile');
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
+	 * 
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit()
 	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
+		$profile = Auth::user()->profile;        
+        return view('user.profile_edit', compact('profile'));
 	}
 
 }

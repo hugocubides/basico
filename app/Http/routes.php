@@ -18,6 +18,8 @@ Route::get('/', 'WelcomeController@index');
 Route::get('dashboard', 'DashboardController@index');
 
 Route::get('user/profile', 'ProfileController@index');
+Route::get('user/profile/edit', 'ProfileController@edit');
+Route::post('user/profile', 'ProfileController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

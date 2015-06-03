@@ -16,7 +16,7 @@ class Profile extends Model {
 	 *
 	 * @var array
 	 */    
-    protected $fillable = ['first_name', 'last_name', 'display_name', 'birthday'];
+    protected $fillable = ['first_name', 'last_name', 'display_name', 'birthday', 'bio', 'profession', 'organization', 'address', 'city', 'country', 'phone', 'mobile', 'website', 'facebook', 'twitter', 'linkedin'];
     
     /**
      * [[Description]]

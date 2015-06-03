@@ -41,6 +41,7 @@ return array(
     'website'		=> 'Web',
     
     //CRUD
-    'save'			=> 'Guardar'
+    'save'			=> 'Guardar',
+    'edit'			=> 'Modificar'
     
 );

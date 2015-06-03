@@ -8,6 +8,7 @@ La gestión de roles y permisos estará implementado con el paquete entrust.
 * Laravel 5.*
 * [Entrust](https://github.com/Zizaco/entrust) 
 * [Flatly Theme](http://bootswatch.com/flatly/)
+* [illuminate/html](https://github.com/illuminate/html)
 
 ### Características
 * Layout básico en bootstrap usando blade

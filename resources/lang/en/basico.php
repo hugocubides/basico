@@ -26,6 +26,7 @@ return array(
     'welcome_dashboard' 	=> 'You are in dashboard',
     'locale'		=> 'Locale',
     
+    
     //Profile
     'profile'		=> 'Profile',
     'first_name' 	=> 'First Name',
@@ -40,5 +41,10 @@ return array(
     'country'		=> 'Country',
     'phone'			=> 'Phone',
     'mobile'		=> 'Mobile Phone',
-    'website'		=> 'Website'
+    'website'		=> 'Website',
+    
+    
+    //CRUD
+    'save'			=> 'Save',
+    'edit'			=> 'Edit'
 );
