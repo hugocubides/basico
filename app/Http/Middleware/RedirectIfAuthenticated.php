@@ -13,6 +13,8 @@ class RedirectIfAuthenticated
      * @var Guard
      */
     protected $auth;
+    
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new filter instance.
@@ -35,7 +37,16 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            return redirect('/home');
+            
+            if (property_exists($this, 'redirectTo'))
+            {
+                return redirect($redirectTo);
+            }else
+            {
+                return redirect('/home');  
+            }            
+            
+            //return redirect('/home');
         }
 
         return $next($request);

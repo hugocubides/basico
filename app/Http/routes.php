@@ -15,6 +15,8 @@
 
 Route::get('/', 'PagesController@index');
 
+Route::get('dashboard', 'DashboardController@index');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
