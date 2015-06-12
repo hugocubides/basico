@@ -37,9 +37,7 @@ return [
     
     //Pofile
     'profile'		=> 'Perfil',        
-    'first_name' 	=> 'Nombre',
-    'last_name' 	=> 'Apellido',
-    'display_name'	=> 'Nombre a mostrar',
+    'name' 	=> 'Nombre',
     'birthday'		=> 'Complea&ntilde;os',
     'bio'			=> 'Biograf&iacute;a',
     'profession'	=> 'Profesi&oacute;n',
@@ -49,10 +47,8 @@ return [
     'country'		=> 'Pa&iacute;s',
     'phone'			=> 'Tel&eacute;fono',
     'mobile'		=> 'Celular',
-    'website'		=> 'Web',
-    'facebook'      => 'Facebook',
-    'twitter'       => 'Twitter',
-    'linkedin'      => 'Linkedin',
+    'website'		=> 'Sitio Web',
+    'none'          => 'Ninguno',
     
     //CRUD
     'save'			=> 'Guardar',

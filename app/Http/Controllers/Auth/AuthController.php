@@ -58,10 +58,26 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $result = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        
+        $this->add_profile($result, $data);
+        
+        return $result;
+    }
+    
+    /**
+     * Crea el perfil para el usuario que se acaba de registrar
+     * @param object $user
+     * @param array $data
+     */
+    protected function add_profile( $user, $data )
+    {
+        $profile = new \App\Profile;
+        $profile->user_id = $user->id;
+        $profile->save();
     }
 }

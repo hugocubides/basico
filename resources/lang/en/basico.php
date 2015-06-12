@@ -34,9 +34,7 @@ return [
     'locale'		=> 'Locale',
     //Profile
     'profile'		=> 'Profile',
-    'first_name' 	=> 'First Name',
-    'last_name' 	=> 'Last Name',
-    'display_name'	=> 'Display Name',
+    'name' 	        => 'Name',
     'birthday'		=> 'Birthday',
     'bio'			=> 'Bio',
     'profession'	=> 'Profession',
@@ -47,9 +45,8 @@ return [
     'phone'			=> 'Phone',
     'mobile'		=> 'Mobile Phone',
     'website'		=> 'Website',
-    'facebook'      => 'Facebook',
-    'twitter'       => 'Twitter',
-    'linkedin'      => 'Linkedin',
+    'none'          => 'None',
+
     //CRUD
     'save'			=> 'Save',
     'edit'			=> 'Edit'

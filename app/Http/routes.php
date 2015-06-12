@@ -17,6 +17,10 @@ Route::get('/', 'PagesController@index');
 
 Route::get('dashboard', 'DashboardController@index');
 
+Route::get('user/profile', 'ProfileController@index');
+Route::get('user/profile/edit', 'ProfileController@edit');
+Route::post('user/profile', 'ProfileController@store');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

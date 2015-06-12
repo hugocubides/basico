@@ -280,6 +280,8 @@ th {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 .glyphicon-asterisk:before {
   content: "\2a";
