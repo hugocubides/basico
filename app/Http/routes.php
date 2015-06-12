@@ -11,4 +11,6 @@
 |
 */
 
+//\App::setLocale('es');
+
 Route::get('/', 'PagesController@index');
