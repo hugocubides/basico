@@ -16,7 +16,7 @@ return [
     'welcome' 	   => 'Welcome',
     'welcome_msg'  => 'This is your home page',
     //Users
-    'login' 		=> 'Login',
+    'login' 		=> 'Log in',
     'signup' 		=> 'Sign up',
     'logout'		=> 'Logout',
     'email'			=> 'Email',
