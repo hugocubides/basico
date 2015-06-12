@@ -27,6 +27,7 @@ return [
     'confirm_pwd'	=> 'Confirm Password',
     'reset_pwd'		=> 'Reset Password',
     'send_pwd_link'	=> 'Send Password Reset Link',
+    'error_msg'     => '<strong>Whoops!</strong> There were some problems with your input.',
     //Dashboard
     'dashboard'		=> 'Dashboard',
     'welcome_dashboard' 	=> 'You are in dashboard',

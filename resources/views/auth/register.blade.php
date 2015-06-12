@@ -7,18 +7,9 @@
 			<div class="page-header text-center">
               <h1>{{ trans('basico.signup') }}</h1>
             </div>
-				
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
+            
+            @include('errors.errors_form')
+            
             <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 

@@ -28,6 +28,7 @@ return [
     'confirm_pwd'	=> 'Confirmar contraseña',
     'reset_pwd'		=> 'Restablecer contraseña',
     'send_pwd_link'	=> 'Enviar enlace para restablecer la contraseña',
+    'error_msg'     => '<strong>OhOh!</strong> Hay algunas cosas que corregir en el formulario.',
     
     //Dashboard
     'dashboard'		=> 'Tablero',
